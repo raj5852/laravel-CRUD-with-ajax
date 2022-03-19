@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AjaxBOOKCRUDController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,7 @@ Route::get('/', function () {
 });
 
 
+Route::get('ajax-book-crud', [AjaxBOOKCRUDController::class, 'index']);
+Route::post('add-update-book', [AjaxBOOKCRUDController::class, 'store']);
+Route::post('edit-book', [AjaxBOOKCRUDController::class, 'edit']);
+Route::post('delete-book', [AjaxBOOKCRUDController::class, 'destroy']);
